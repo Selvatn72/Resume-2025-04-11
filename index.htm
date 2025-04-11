@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selva Resume</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .resume-container {
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 90%; /* Adjust as needed */
+            max-width: 960px;
+            padding: 30px;
+            margin-bottom: 20px; /* Space for the language buttons */
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-info {
+            flex-grow: 1;
+        }
+
+        .profile-info h1 {
+            color: #0077cc;
+            font-size: 2.8em;
+            margin-bottom: 5px;
+        }
+
+        .profile-info strong {
+            color: #555;
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .profile-info a {
+            color: #0077cc;
+            text-decoration: none;
+        }
+
+        .profile-info a:hover {
+            text-decoration: underline;
+        }
+
+        .image-container {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid #eee;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .section-title {
+            color: #0077cc;
+            font-size: 2em;
+            font-weight: bold;
+            border-bottom: 3px solid #0077cc;
+            padding-bottom: 8px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        .summary-content, .skills-content, .education-content, .experience-content, .certifications-content, .strengths-content, .languages-content {
+            margin-bottom: 20px;
+        }
+
+        .skills-list ul, .education-list ul, .experience-list ul, .certifications-list ul, .strengths-list ul, .languages-list ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skills-list li, .education-list li, .certifications-list li, .strengths-list li, .languages-list li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .skills-list li::before, .education-list li::before, .certifications-list li::before, .strengths-list li::before, .languages-list li::before {
+            content: '•';
+            color: #0077cc;
+            position: absolute;
+            left: 0;
+        }
+
+        .education-info ul {
+            margin-top: 5px;
+            padding-left: 15px;
+            list-style-type: circle;
+        }
+
+        .experience-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-left: 3px solid #0077cc;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        .experience-item h3 {
+            color: #0077cc;
+            font-size: 1.6em;
+            margin-bottom: 5px;
+        }
+
+        .experience-item p {
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .experience-item ul {
+            list-style: disc;
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+
+        .experience-item strong {
+            font-weight: bold;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background-color: #ddd;
+            margin: 20px 0;
+        }
+
+        footer {
+            text-align: center;
+            color: #777;
+            font-size: 0.9em;
+            margin-top: 30px;
+        }
+
+        /* Language Button Styles */
+        .language-buttons {
+            margin-bottom: 20px;
+        }
+
+        .language-buttons button {
+            background-color: #0077cc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+            
+           
+        }
+
+        .language-buttons button:hover {
+            background-color: #005580;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+        }
+
+        #japanese-resume {
+            display: none; /* Hide Japanese resume by default */
+        }
+       
+       
+       
+    </style>
+</head>
+<body>
+    <div class="language-buttons">
+        <button onclick="toggleResume('english')">English Resume</button>
+        <button onclick="toggleResume('japanese')">職務履歴書</button>
+    </div>
+
+    <div class="resume-container" id="english-resume">
+        <div class="header">
+            <div class="profile-info">
+                <h1>Selvaperumal Moorthy</h1>
+                <strong>IT Analyst Engineer</strong><br>
+                <strong>Phone No: <a href="tel:817092262088">+817092262088</a></strong><br>
+                <strong>Email: <a href="mailto:selvamoorthy3010@gmail.com">selvamoorthy3010@gmail.com</a></strong><br>
+                <strong>LinkedIn: <a href="https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=selvaperumal-moorthy-8a0394186" target="_blank">Click here</a></strong><br>
+                <strong>Location: Tokyo, Japan</strong><br>
+            </div>
+            <div class="image-container">
+                <img src="selva.jpg" alt="Selva">
+            </div>
+        </div>
+
+        <section class="summary-section">
+            <h2 class="section-title">Professional Summary</h2>
+            <div class="summary-content">
+                <p>Experienced IT professional with over 6 years of hands-on experience in technical support, specializing in Systems Administration, Networking, Inventory Management, Hardware/Software Maintenance, and Information Security.<br>
+                Proven ability to manage end-user computing environments and facilitate seamless communication between global and local IT teams. Fluent in Japanese (N1), English, and Tamil, with a strong commitment to continuous learning and professional development.<br>
+                Strong foundational knowledge in Operating System (OS) processes and multithreading, with the ability to understand and optimize system-level resource management. Proficient in Object-Oriented Programming (OOP) and Python, with the ability to quickly adapt to new programming languages and
+                technologies, utilizing core concepts effectively for building scalable and efficient solutions.</p>
+            </div>
+        </section>
+
+        <section class="skills-section">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills-content skills-list">
+                <ul>
+                    <li>Operating Systems: Windows, Linux
+                        <ul>
+                            <li>Strong understanding of how operating systems manage processes and threads, multitasking, and resource allocation.</li>
+                            <li>Familiar with process management, memory management, and scheduling within OS.</li>
+                        </ul>
+                    </li>
+                    <li>Networking: L2 Networking, VLAN, OSPF, Routing, TCP/IP</li>
+                    <li>Tools: AWS, Active Directory, MS365, CCNA, Group Policies</li>
+                    <li>Programming Languages: Python, HTML, CSS, javascript, nodejs, expressjs, reactjs, mysql
+                        <ul>
+                            <li>Excellent knowledge of Python, including core concepts of Object-Oriented Programming (OOP)</li>
+                            <li>Ability to write modular, reusable code and develop small-scale applications for practical use.</li>
+                            <li>Quick learning ability for new programming languages and frameworks.</li>
+                        </ul>
+                    </li>
+                    <li>Troubleshooting:
+                        <ul>
+                            <li>Network</li>
+                            <li>Server</li>
+                            <li>Desktop/Laptop (Break-Fix)</li>
+                        </ul>
+                    </li>
+                    <li>Other:
+                        <ul>
+                            <li>EUC</li>
+                            <li>Data Center Management</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="education-section">
+            <h2 class="section-title">Education</h2>
+            <div class="education-content education-list">
+                <ul>
+                    <li>B-Tech in Information Technology
+                        <ul class="education-info">
+                            <li>SRM Valliammai Engineering College, Chennai</li>
+                            <li>Anna University</li>
+                        </ul>
+                    </li>
+                    <li>Diploma in Electrical and Electronic Engineering
+                        <ul class="education-info">
+                            <li>Government Polytechnic College, Chennai</li>
+                            <li>Directorate of Technical Education</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="experience-section">
+            <h2 class="section-title">Experience</h2>
+            <div class="experience-content experience-list">
+                <div class="experience-item">
+                    <h3>IT Analyst</h3>
+                    <p>Wipro Japan | Tokyo, Japan</p>
+                    <p><strong>Duration:</strong> 2024-03 - Present</p>
+                    <ul>
+                        <li><strong>Project:</strong> Olympus system engineer</li>
+                        <li><strong>Role:</strong> Acted as the bridge engineer between global infrastructure teams and Japanese clients.</li>
+                        <li>Provided L2 network troubleshooting, hardware IMAC (Install, Move, Add, Change), and Break-Fix services for desktop, laptops, and printers.</li>
+                        <li>Managed IT infrastructure including file servers, print servers, and backups.</li>
+                        <li>Provided end-user and policy-based support for Microsoft Intune-managed devices and application deployments.</li>
+                        <li>Coordinated vendor services, and handled IT procurement and maintenance.</li>
+                        <li><strong>Automation of Email Draft Creation:</strong> Developed an automated Python script to generate email drafts from data stored in a CSV file.<br>
+                            This system was used to generate and send personalized emails efficiently using SCCM-extracted CSV files. The automation saved significant<br> time in
+                            handling repetitive communication tasks for specific PC users. The process used Python libraries such as pandas, smtplib, <br>
+                            and email.mime to create, format, and send emails.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Technical Support Engineer (Bridge Engineer)</h3>
+                    <p>HCL Tech | Chennai, India</p>
+                    <p><strong>Duration:</strong> 2023-06 - 2024-02</p>
+                    <ul>
+                        <li><strong>Project:</strong> BD Medical Projects</li>
+                        <li>Translated technical documents and communications between Japanese and English for BD's medical project.</li>
+                        <li>Acted as a bridge engineer, facilitating communication and collaboration between the global infrastructure team and the Japanese client.</li>
+                        <li>Supported project coordination and implementation efforts to ensure seamless integration of IT solutions.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Field service Engineer</h3>
+                    <p>TCS Japan | Tokyo, Japan</p>
+                    <p><strong>Duration:</strong> 2022-10 - 2023-05</p>
+                    <ul>
+                        <li><strong>Project:</strong> Cargill Japan</li>
+                        <li>Acted as bridge engineer between global infrastructure teams and Japanese clients.</li>
+                        <li>Rack and configure network devices to meet project specifications.</li>
+                        <li>Provide hardware IMAC & Break-Fix services for desktop, laptop, and printers.</li>
+                        <li>Supported Server, Network, and other site-specific IT devices.</li>
+                        <li>Managed site file, print, and backup server maintenance.</li>
+                        <li>Coordinated with power and telecom vendors for infrastructure maintenance.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Technical Support Engineer</h3>
+                    <p>Fujitsu Consulting India Private Limited | Tokyo, Japan(CCW payroll)</p>
+                    <p><strong>Duration:</strong> 2020-01 - 2022-09</p>
+                    <ul>
+                        <li><strong>Project:</strong> Fujitsu FSAS Japan</li>
+                        <li>Configured and managed Group Policies and provided Tier 1 & 2 support for servers and workstations.</li>
+                        <li>Delivered on-site support for desktops, laptops, and printers.</li>
+                        <li>Managed technical inquiries via phone, email, and in-person interactions.</li>
+                        <li>Translated technical documents and service tickets between Japanese and English.</li>
+                        <li>Troubleshot and supported Citrix Virtual Apps and Desktops (formerly XenApp/XenDesktop) environments.</li>
+                        <li>Provided end-user and policy-based support for Microsoft Intune-managed devices and application deployments.</li>
+                        <li>Handled secure content collaboration issues related to Box, including user access and sync errors.</li>
+                        <li>Supported VPN connectivity via Palo Alto’s GlobalProtect, including login failures, certificate issues, and tunnel drops.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Service Desk Agent</h3>
+                    <p>Fujitsu Consulting India Private Limited | Chennai, India</p>
+                    <p><strong>Duration:</strong> 2018-03 - 2020-12</p>
+                    <ul>
+                        <li>Supported Japanese clients with hardware service requests and provided technical assistance.</li>
+                        <li>Processed customer requests including registration, cancellation, and modifications.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="certifications-section">
+            <h2 class="section-title">Certifications</h2>
+            <div class="certifications-content certifications-list">
+                <ul>
+                    <li>JLPT N2 (Japanese Language Proficiency Test)</li>
+                    <li>CCNA (Cisco Certified Network Associate)</li>
+                    <li>ITIL Foundation</li>
+                    <li>AWS Certified Cloud Practitioner</li>
+                    <li>Microsoft modern desktop</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="strengths-section">
+            <h2 class="section-title">Strengths</h2>
+            <div class="strengths-content strengths-list">
+                <ul>
+                    <li>Eager to Learn: Constantly seeking to enhance technical skills and stay updated with industry trends.</li>
+                    <li>Neat & Organized: Focused on maintaining a clean and organized workspace for future tasks and team collaboration.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="languages-section">
+            <h2 class="section-title">Languages</h2>
+            <div class="languages-content languages-list">
+                <ul>
+                    <li>English</li>
+                    <li>Japanese</li>
+                    <li>Tamil</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Moorthy Selvaperumal. All rights reserved.</p>
+        </footer>
+    </div>
+   
+
+    <!-- Japanese Resume -->
+
+    <div class="resume-container" id="japanese-resume">
+        <div class="header">
+            <div class="profile-info">
+                <h1>セルバペルマル・ムーシ</h1>
+                <strong>ITアナリストエンジニア</strong><br>
+                <strong>電話番号: <a href="tel:817092262088">+817092262088</a></strong><br>
+                <strong>メール: <a href="mailto:selvamoorthy3010@gmail.com">selvamoorthy3010@gmail.com</a></strong><br>
+                <strong>LinkedIn: <a href="www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=selvaperumal-moorthy-8a0394186" target="_blank">こちらをクリック</a></strong><br>
+                <strong>所在地: 東京都</strong><br>
+            </div>
+            <div class="image-container">
+                <img src="selva.jpg" alt="セルバ">
+            </div>
+        </div>
+
+        <section class="summary-section">
+            <h2 class="section-title">職務概要</h2>
+            <div class="summary-content">
+                <p>システム管理、ネットワーキング、在庫管理、ハードウェア/ソフトウェアメンテナンス、情報セキュリティに特化した6年以上の実務経験を持つITプロフェッショナル。<br>
+                エンドユーザーのコンピューティング環境を管理し、グローバルおよびローカルのITチーム間のシームレスなコミュニケーションを促進する実績。日本語（N1）、英語、タミル語に堪能であり、継続的な学習と専門能力開発に強くコミットしている。<br>
+                オペレーティングシステム（OS）のプロセスとマルチスレッドに関する強力な基礎知識を持ち、システムレベルのリソース管理を理解し最適化する能力がある。オブジェクト指向プログラミング（OOP）とPythonに精通しており、新しいプログラミング言語やテクノロジーに迅速に適応し、スケーラブルで効率的なソリューションを構築するためにコアコンセプトを効果的に活用できる。</p>
+            </div>
+        </section>
+
+        <section class="skills-section">
+            <h2 class="section-title">スキルと専門知識</h2>
+            <div class="skills-content skills-list">
+                <ul>
+                    <li>オペレーティングシステム: Windows, Linux
+                        <ul>
+                            <li>オペレーティングシステムがプロセスとスレッド、マルチタスク、リソース割り当てをどのように管理するかについての深い理解。</li>
+                            <li>OS内でのプロセス管理、メモリ管理、スケジューリングに精通。</li>
+                        </ul>
+                    </li>
+                    <li>ネットワーキング: L2ネットワーキング, VLAN, OSPF, ルーティング, TCP/IP</li>
+                    <li>ツール: AWS, Active Directory, MS365, CCNA, グループポリシー</li>
+                    <li>プログラミング言語: Python, HTML, CSS,javascript, nodejs, expressjs, reactjs, mysql
+                        <ul>
+                            <li>オブジェクト指向プログラミング（OOP）のコアコンセプトを含む、Pythonの優れた知識。</li>
+                            <li>モジュール化された再利用可能なコードを作成し、実用的な小規模アプリケーションを開発する能力。</li>
+                            <li>新しいプログラミング言語やフレームワークを迅速に学習する能力。</li>
+                        </ul>
+                    </li>
+                    <li>トラブルシューティング:
+                        <ul>
+                            <li>ネットワーク</li>
+                            <li>サーバー</li>
+                            <li>デスクトップ/ラップトップ（修理・交換）</li>
+                        </ul>
+                    </li>
+                    <li>その他:
+                        <ul>
+                            <li>EUC（エンドユーザーコンピューティング）</li>
+                            <li>データセンター管理</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="education-section">
+            <h2 class="section-title">学歴</h2>
+            <div class="education-content education-list">
+                <ul>
+                    <li>情報技術学士（B-Tech）
+                        <ul class="education-info">
+                            <li>SRMヴァリヤマイ工科大学, チェンナイ</li>
+                            <li>アンナ大学</li>
+                        </ul>
+                    </li>
+                    <li>電気電子工学ディプロマ
+                        <ul class="education-info">
+                            <li>政府工業専門学校, チェンナイ</li>
+                            <li>技術教育局</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="experience-section">
+            <h2 class="section-title">職務経歴</h2>
+            <div class="experience-content experience-list">
+                <div class="experience-item">
+                    <h3>ITアナリスト</h3>
+                    <p>Wipro Japan | 東京都</p>
+                    <p><strong>期間:</strong> 2024年3月 - 現在</p>
+                    <ul>
+                        <li><strong>プロジェクト:</strong> オリンパスシステムエンジニア</li>
+                        <li><strong>役割:</strong> グローバルインフラストラクチャチームと日本のクライアント間のブリッジエンジニアとして活動。</li>
+                        <li>デスクトップ、ラップトップ、プリンターのL2ネットワークのトラブルシューティング、ハードウェアIMAC（インストール、移動、追加、変更）、および修理サービスを提供。</li>
+                        <li>ファイルサーバー、プリントサーバー、バックアップを含むITインフラストラクチャを管理。</li>
+                        <li>Microsoft Intuneで管理されたデバイスとアプリケーション展開のエンドユーザーおよびポリシーベースのサポートを提供。</li>
+                        <li>ベンダーサービスの調整、およびIT調達とメンテナンスを担当。</li>
+                        <li><strong>メールドラフト作成の自動化:</strong> CSVファイルに保存されたデータからメールドラフトを自動生成するPythonスクリプトを開発。<br>
+                            このシステムは、SCCMで抽出されたCSVファイルを使用して、パーソナライズされたメールを効率的に生成および送信するために使用されました。この自動化により、特定のPCユーザー向けの繰り返しコミュニケーションタスクにかかる時間を大幅に削減しました。このプロセスでは、pandas、smtplib、email.mimeなどのPythonライブラリを使用して、メールの作成、フォーマット、送信を行いました。</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>テクニカルサポートエンジニア（ブリッジエンジニア）</h3>
+                    <p>HCL Tech | チェンナイ、インド</p>
+                    <p><strong>期間:</strong> 2023年6月 - 2024年2月</p>
+                    <ul>
+                        <li><strong>プロジェクト:</strong> BDメディカルプロジェクト</li>
+                        <li>BDの医療プロジェクトのために、日本語と英語の技術文書およびコミュニケーションを翻訳。</li>
+                        <li>グローバルインフラストラクチャチームと日本のクライアント間のコミュニケーションとコラボレーションを促進するブリッジエンジニアとして活動。</li>
+                        <li>ITソリューションのシームレスな統合を確実にするために、プロジェクトの調整と実施をサポート。</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>フィールドサービスエンジニア</h3>
+                    <p>TCSジャパン | 東京都</p>
+                    <p><strong>期間:</strong> 2022年10月 - 2023年5月</p>
+                    <ul>
+                        <li><strong>プロジェクト:</strong> カーギルジャパン</li>
+                        <li>グローバルインフラストラクチャチームと日本のクライアント間のブリッジエンジニアとして活動。</li>
+                        <li>プロジェクト仕様に合わせてネットワークデバイスをラックに搭載し、設定。</li>
+                        <li>デスクトップ、ラップトップ、プリンターのハードウェアIMACおよび修理・交換サービスを提供。</li>
+                        <li>サーバー、ネットワーク、およびその他のサイト固有のITデバイスをサポート。</li>
+                        <li>サイトのファイル、印刷、バックアップサーバーのメンテナンスを管理。</li>
+                        <li>インフラストラクチャのメンテナンスのために、電力および通信ベンダーと調整。</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>テクニカルサポートエンジニア</h3>
+                    <p>富士通コンサルティングインディアプライベートリミテッド | 東京都（CCW給与）</p>
+                    <p><strong>期間:</strong> 2020年1月 - 2022年9月</p>
+                    <ul>
+                        <li><strong>プロジェクト:</strong> 富士通FSASジャパン</li>
+                        <li>グループポリシーを構成および管理し、サーバーおよびワークステーションのTier 1および2のサポートを提供。</li>
+                        <li>デスクトップ、ラップトップ、プリンターのオンサイトサポートを提供。</li>
+                        <li>電話、メール、対面での技術的な問い合わせに対応。</li>
+                        <li>日本語と英語の技術文書およびサービスチケットを翻訳。</li>
+                        <li>Citrix Virtual Apps and Desktops（旧XenApp/XenDesktop）環境のトラブルシューティングとサポート。</li>
+                        <li>Microsoft Intuneで管理されたデバイスとアプリケーション展開のエンドユーザーおよびポリシーベースのサポートを提供。</li>
+                        <li>ユーザーアクセスや同期エラーなど、Boxに関連するセキュアなコンテンツコラボレーションの問題に対応。</li>
+                        <li>ログイン失敗、証明書の問題、トンネルの切断など、Palo AltoのGlobalProtectを介したVPN接続をサポート。</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>サービスデスクエージェント</h3>
+                    <p>富士通コンサルティングインディアプライベートリミテッド | チェンナイ、インド</p>
+                    <p><strong>期間:</strong> 2018年3月 - 2020年12月</p>
+                    <ul>
+                        <li>日本のクライアントに対してハードウェアサービスの要求をサポートし、技術支援を提供。</li>
+                        <li>登録、キャンセル、変更などの顧客リクエストを処理。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="certifications-section">
+            <h2 class="section-title">資格</h2>
+            <div class="certifications-content certifications-list">
+                <ul>
+                    <li>JLPT N2（日本語能力試験N2）</li>
+                    <li>CCNA（Cisco Certified Network Associate）</li>
+                    <li>ITIL Foundation</li>
+                    <li>AWS Certified Cloud Practitioner</li>
+                    <li>Microsoft modern desktop</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="strengths-section">
+            <h2 class="section-title">強み</h2>
+            <div class="strengths-content strengths-list">
+                <ul>
+                    <li>学習意欲: 常に技術スキルを向上させ、業界のトレンドに遅れないように努めています。</li>
+                    <li>几帳面で整理整頓が得意: 将来のタスクやチームコラボレーションのために、清潔で整理されたワークスペースを維持することを重視しています。</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="languages-section">
+            <h2 class="section-title">言語</h2>
+            <div class="languages-content languages-list">
+                <ul>
+                    <li>英語</li>
+                    <li>日本語</li>
+                    <li>タミル語</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 ムーシ・セルバペルマル. All rights reserved.</p>
+        </footer>
+    </div>
+
+    </div>
+    <script>
+        function toggleResume(language) {
+            const englishResume = document.getElementById('english-resume');
+            const japaneseResume = document.getElementById('japanese-resume');
+
+            if (language === 'english') {
+                englishResume.style.display = 'block';
+                japaneseResume.style.display = 'none';
+            }
+            else if(language === 'japanese') {
+                englishResume.style.display = 'none';
+                japaneseResume.style.display = 'block';
+            }
+        }
+    </script>
+        
+     
+</body>
+</html>
+<!-- Japanese Resume -->
