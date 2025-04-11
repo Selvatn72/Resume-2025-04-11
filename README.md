@@ -1,2 +1,2 @@
 # Resume-2025-04-11
-updated resume with  latest CSS, also i have upadated the conetent skill java scrip. 
+This repository hosts my current resume, revised on April 11, 2025. The presentation has been enhanced with a modern and clean aesthetic utilizing the latest CSS standards for optimal viewing on various screen sizes. The content has been thoroughly updated to accurately represent my current technical skills, notably including strong proficiency in Java and JavaScript. Feel free to explore!
